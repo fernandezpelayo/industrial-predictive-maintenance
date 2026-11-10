@@ -1,0 +1,13 @@
+# Variables de entorno y credenciales
+.env
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+venv/
+.venv/
+
+# Configuración local de Visual Studio Code
+.vscode/
