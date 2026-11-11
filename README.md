@@ -141,7 +141,7 @@ Dashboard interactivo conectado a MySQL, diseñado para consultar los principale
 
 *Vista general del dashboard.*
 
-**Demostración del dashboard:** [Ver vídeo con ejemplos de los tooltips y elementos interactivos](dashboard/dashboard_mantenimiento.mp4).
+**Demostración del dashboard:** [Vista interactiva del dashboard](dashboard/dashboard_mantenimiento.mp4)
 ---
 
 ## Estructura del Proyecto
