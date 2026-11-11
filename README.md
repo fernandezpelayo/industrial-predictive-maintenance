@@ -7,8 +7,6 @@ El objetivo es identificar patrones de fallo, priorizar mantenimiento y ofrecer 
 
 ## Índice
 
-## Índice
-
 1. [Tecnologías utilizadas](#tecnologías-utilizadas)
 2. [Hallazgos principales](#hallazgos-principales)
 3. [Definición del Índice de Esfuerzo Mecánico](#definición-del-índice-de-esfuerzo-mecánico)
@@ -129,39 +127,82 @@ CSV → Python (ETL) → MySQL → Modelado → Power BI → Dashboard Ejecutivo
 ## Visualizaciones
 
 ### Python
-- Análisis de fallos  
-- Matriz de correlación  
-- Matriz de confusión  
-- Importancia de variables
+
+- Análisis de fallos.
+- Matriz de correlación.
+- Matriz de confusión.
+- Importancia de variables.
 
 ### Power BI
-Dashboard interactivo conectado a MySQL.
 
+Dashboard interactivo conectado a MySQL, diseñado para consultar los principales indicadores y patrones relacionados con los fallos de las máquinas.
+
+![Dashboard de Mantenimiento Predictivo Industrial](dashboard/dashboard_mantenimiento.png)
+
+*Vista general del dashboard.*
+
+**Demostración del dashboard:** [Ver vídeo con ejemplos de los tooltips y elementos interactivos](dashboard/dashboard_mantenimiento.mp4).
 ---
 
 ## Estructura del Proyecto
 
-- `data/` → dataset original  
-- `outputs/` → máquinas críticas  
-- `reports/` → gráficas y métricas  
-- `scripts/` → ETL, análisis y modelo  
-- `sql/` → consultas SQL  
-- `dashboard/` → archivo `.pbix` 
-- `README.md`  
-- `requirements.txt`  
-- `.env.example`  
-- `.gitignore`  
+```text
+industrial-predictive-maintenance/
+│
+├── dashboard/
+│   ├── Mantenimiento_Predictivo_Industrial.pbix
+│   ├── dashboard_mantenimiento.png
+│   └── dashboard_mantenimiento.mp4
+│
+├── data/
+│   └── mantenimiento.csv
+│
+├── outputs/
+│   └── maquinas_criticas.csv
+│
+├── reports/
+│   ├── images/
+│   │   ├── correlacion.png
+│   │   ├── fallos.png
+│   │   └── matriz_confusion.png
+│   │
+│   └── metrics/
+│       ├── importancia_variables.csv
+│       └── metricas_modelo.csv
+│
+├── scripts/
+│   ├── analisis_visual.py
+│   ├── database_upload.py
+│   ├── generar_reporte.py
+│   └── modelo_predictivo.py
+│
+├── sql/
+│   └── consultas_industriales.sql
+│
+├── .env.example
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
+- `data/` → dataset original utilizado en el análisis.
+- `outputs/` → archivos generados con los registros seleccionados para revisión.
+- `reports/images/` → gráficas y visualizaciones del análisis.
+- `reports/metrics/` → métricas del modelo e importancia de las variables.
+- `scripts/` → scripts Python para la carga de datos, análisis y modelado.
+- `sql/` → consultas SQL para el análisis de los datos.
+- `dashboard/` → dashboard interactivo de Power BI.
 
 ---
 
 ## Instalación y ejecución
 
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/usuario/proyecto-industrial.git
-cd proyecto-industrial
-```
+### 1. Clonar el repositorio 
+ 
+```bash 
+git clone https://github.com/fernandezpelayo/industrial-predictive-maintenance.git
+cd industrial-predictive-maintenance
+``` 
 
 ### 2. Crear un entorno virtual
 

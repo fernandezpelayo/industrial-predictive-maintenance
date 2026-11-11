@@ -17,8 +17,12 @@ from sklearn.model_selection import train_test_split
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-REPORTS_DIR = BASE_DIR / "reports"
-REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+
+IMAGES_DIR = BASE_DIR / "reports" / "images"
+METRICS_DIR = BASE_DIR / "reports" / "metrics"
+
+IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+METRICS_DIR.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(BASE_DIR / ".env")
 
@@ -185,7 +189,7 @@ def evaluar_modelo(y_test, y_pred):
 
     # Guardar las métricas en un CSV.
     pd.DataFrame(informe).transpose().to_csv(
-        REPORTS_DIR / "metricas_modelo.csv",
+        METRICS_DIR / "metricas_modelo.csv",
         index_label="clase",
         sep=";",
         decimal=","
@@ -215,7 +219,7 @@ def evaluar_modelo(y_test, y_pred):
     plt.ylabel("Valor real")
     plt.tight_layout()
 
-    output_path = REPORTS_DIR / "matriz_confusion.png"
+    output_path = IMAGES_DIR / "matriz_confusion.png"
 
     plt.savefig(
         output_path,
@@ -257,7 +261,7 @@ def generar_importancias(modelo):
     )
 
     df_importancias.to_csv(
-        REPORTS_DIR / "importancia_variables.csv",
+        METRICS_DIR / "importancia_variables.csv",
         index=False,
         sep=";",
         decimal=","
@@ -275,9 +279,9 @@ def generar_importancias(modelo):
     )
 
     print(
-        "\nImportancias guardadas en: "
-        "reports/importancia_variables.csv"
-    )
+    "\nImportancias guardadas en: "
+    "reports/metrics/importancia_variables.csv"
+)
 
 
 # ============================================================

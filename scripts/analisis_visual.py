@@ -14,8 +14,9 @@ from sqlalchemy import URL, create_engine
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-REPORTS_DIR = BASE_DIR / "reports"
-REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+
+IMAGES_DIR = BASE_DIR / "reports" / "images"
+IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(BASE_DIR / ".env")
 
@@ -152,7 +153,7 @@ def generar_grafica_fallos(df):
     plt.legend(title="Tipo de máquina")
     plt.tight_layout()
 
-    output_path = REPORTS_DIR / "fallos.png"
+    output_path = IMAGES_DIR / "fallos.png"
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.show()
     plt.close()
@@ -198,7 +199,7 @@ def generar_matriz_correlacion(df):
     )
     plt.tight_layout()
 
-    output_path = REPORTS_DIR / "correlacion.png"
+    output_path = IMAGES_DIR / "correlacion.png"
     plt.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.show()
     plt.close()
